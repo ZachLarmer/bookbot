@@ -1,8 +1,8 @@
 
 
 ## book text to string
-def get_book_text():
-    with open("books/frankenstein.txt") as f:
+def get_book_text(path_to_file):
+    with open(path_to_file) as f:
         file_contents = f.read()
     return(file_contents)
 
@@ -13,9 +13,8 @@ def count_words(contents):
     return num_words
 
 ## count characters
-def count_chars():
+def count_chars(book_text):
     char_frequencies = {}
-    book_text = get_book_text()
     chars = book_text.lower()
     for char in chars:
         if char in char_frequencies:
