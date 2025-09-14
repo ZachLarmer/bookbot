@@ -1,15 +1,16 @@
-## Bookbot functions
+## Bookbot
 
-## book text to string
-def get_book_text():
-    with open("books/frankenstein.txt") as f:
-        file_contents = f.read()
-    return(file_contents)
+from stats import get_book_text
+from stats import count_words
+from stats import count_chars
 
 
-## main calls the read function and prints
+## main calls functions to count words in book
 def main():
-    print(get_book_text())
+    book_text = get_book_text()
+    word_count = count_words(book_text)
+    print(f"{word_count} words found in the document")
+    print(count_chars())
 
 
 ## Call main
