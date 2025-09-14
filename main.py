@@ -22,5 +22,13 @@ def main(book_path):
     print(f"============= END ===============")
 
 
-## Call main
-main("books/frankenstein.txt")
+## Check if book path was provided as command line argument
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        print("Example: python bookbot.py books/frankenstein.txt")
+        sys.exit(1)
+    
+    book_path = sys.argv[1]
+    main(book_path)
+
