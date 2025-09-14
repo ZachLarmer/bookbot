@@ -17,9 +17,14 @@ def count_chars(book_text):
     char_frequencies = {}
     chars = book_text.lower()
     for char in chars:
-        if char in char_frequencies:
-            char_frequencies[char] +=1
-        else:
-            char_frequencies[char] = 1
+        if char.isalpha():
+            if char in char_frequencies:
+                char_frequencies[char] +=1
+            else:
+                char_frequencies[char] = 1
     return char_frequencies
-    
+
+## sort and format character counts
+def sorted_chars(char_frequencies):
+    sorted_dict = sorted(char_frequencies.items(), key=lambda item: item[1], reverse=True)
+    return sorted_dict
